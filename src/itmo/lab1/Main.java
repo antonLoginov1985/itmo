@@ -15,6 +15,7 @@ public class Main {
 
 
     public static void number1() {
+
         System.out.println("Я");
         System.out.println("хорошо");
         System.out.println("знаю");
