@@ -35,10 +35,12 @@ public class Main {
         System.out.println(PH.toString());
 
         Phone PH1 = new Phone("S24", "Samsung");
+        PH1.setPrice(799.95);
         System.out.println(PH1.toString());
 
         Phone PH2 = new Phone("S24","Samsung",405, 6.9,549, true);
         System.out.println(PH2.toString());
+        System.out.println(PH2.getPrice());
 
     }
 }

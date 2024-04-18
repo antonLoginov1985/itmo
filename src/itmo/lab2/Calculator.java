@@ -27,27 +27,15 @@ public class Calculator {
     }
 
     public double divide(double x1, double x2) {
-        if (x2 == 0) {
-            return 0;
-        } else {
             return x1 / x2;
-        }
     }
 
     public double divide(long x1, long x2) {
-        if (x2 == 0) {
-            return 0;
-        } else {
             return (double)x1 / (double)x2;
-        }
     }
 
     public double divide(int x1, int x2) {
-        if (x2 == 0) {
-            return 0;
-        } else {
             return (double)x1 / (double)x2;
-        }
     }
 
     public double multiply(double x1, double x2) {

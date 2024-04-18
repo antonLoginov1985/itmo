@@ -9,15 +9,46 @@ public class Main {
     public static void main(String[] args) {
         lessons1();
         lessons2();
-        lessons3();
-        lessons4();
-        lessons5();
-        lessons6();
-        lessons1Part2();
-        lessons2Part2();
-        lessons3Part2();
-        lessons4Part2();
-        lessons5Part2();
+        //lessons 3,4;
+
+        Scanner scanner = new Scanner(System.in);
+        System.out.println("Введите первое число:");
+        int a = scanner.nextInt();
+        System.out.println("Введите второе число:");
+        int b = scanner.nextInt();
+        System.out.println("Введите третье число:");
+        int c = scanner.nextInt();
+        System.out.println("Результат:" + lessons3(a, b, c));
+        System.out.println("Результат:" + lessons4(a, b, c));
+        int[] ints = {3, -3, 7, 4, 5, 4, 3};
+        //lessons 5;
+        System.out.println(lessons5(ints));
+
+        //lessons6
+        System.out.println(lessons6(ints));
+
+        //lessons1 Part2;
+        System.out.println(lessons1Part2(ints));
+        // lessons2 Part2();
+        System.out.println("Result:" + Arrays.toString(lessons2Part2()));
+        //lessons3 Part2
+        int[] intsSwap = {5, 6, 7, 2};
+        System.out.println("Array 1:" + Arrays.toString(intsSwap));
+        System.out.println("Array 2:" + Arrays.toString(swap(intsSwap)));
+
+        //lessons4 Part2();
+        int[] ints42 = {1, 2, 3, 1, 2, 4};
+        System.out.println("Первое уникальное число в массиве:" + lessons4Part2(ints42));
+
+        // lessons5 Part2();
+        int[] ints52 = new int[10];
+        for (int i = 0; i < ints52.length; i++) {
+            ints52[i] = ((int) (Math.random() * 31) - 15);
+        }
+        System.out.println("Массив до сортировки:" + Arrays.toString(ints52));
+        bubbleSort(ints52);
+        System.out.println("Массив поcле сортировки:" + Arrays.toString(ints52));
+
     }
 
     public static void lessons1() {
@@ -42,57 +73,35 @@ public class Main {
         }
     }
 
-    public static void lessons3() {
-        Scanner scanner = new Scanner(System.in);
-        System.out.println("Введите первое число:");
-        int a = scanner.nextInt();
-        System.out.println("Введите второе число:");
-        int b = scanner.nextInt();
-        System.out.println("Введите третье число:");
-        int c = scanner.nextInt();
+    public static boolean lessons3(int a, int b, int c) {
 
-        boolean result;
         if (a + b == c) {
-            result = true;
+            return true;
         } else {
-            result = false;
+            return false;
         }
-        System.out.println("Результат:" + result);
     }
 
-    public static void lessons4() {
-        Scanner scanner = new Scanner(System.in);
-        System.out.println("Введите первое число:");
-        int a = scanner.nextInt();
-        System.out.println("Введите второе число:");
-        int b = scanner.nextInt();
-        System.out.println("Введите третье число:");
-        int c = scanner.nextInt();
+    public static boolean lessons4(int a, int b, int c) {
 
-        boolean result;
         if (b > a && c > b) {
-            result = true;
+            return true;
         } else {
-            result = false;
+            return false;
         }
-        System.out.println("Результат:" + result);
     }
 
-    public static void lessons5() {
-
-        int[] ints = {3, -3, 7, 4, 5, 4, 3};
+    public static boolean lessons5(int[] ints) {
 
         if (ints.length >= 2) {
             if (ints[0] == ints[ints.length - 1]) {
-                System.out.println(true);
-            } else System.out.println(false);
+                return true;
+            } else return false;
 
-        } else System.out.println(false);
+        } else return false;
     }
 
-    public static void lessons6() {
-
-        int[] ints = {3, -3, 7, 4, 5, 4, 3};
+    public static boolean lessons6( int[] ints) {
 
         boolean result = false;
         for (int i : ints) {
@@ -101,12 +110,10 @@ public class Main {
                 break;
             }
         }
-        System.out.println(result);
+       return result;
     }
 
-    public static void lessons1Part2() {
-        int[] ints = {3, -3, 7, 4, 5, 4, 3};
-        //int[] ints = {1, 3, 7, 8, 10, 15, 18};
+    public static String lessons1Part2(int[] ints) {
 
         String result = "OK";
 
@@ -115,12 +122,11 @@ public class Main {
                 result = "Please, try again";
                 break;
             }
-
         }
-        System.out.println(result);
+        return result;
     }
 
-    public static void lessons2Part2() {
+    public static int[] lessons2Part2() {
 
         Scanner scanner = new Scanner(System.in);
         System.out.println("Array length:");
@@ -130,25 +136,20 @@ public class Main {
         for (int i = 0; i < ints.length; i++) {
             ints[i] = scanner.nextInt();
         }
-        System.out.println("Result:" + Arrays.toString(ints));
-    }
-
-    public static void lessons3Part2() {
-        int[] ints = {5, 6, 7, 2};
-        System.out.println("Array 1:" + Arrays.toString(ints));
-        swap(ints);
+        return ints;
 
     }
 
-    public static void swap(int[] ints) {
+
+    public static int[] swap(int[] ints) {
         int[] copyArr = Arrays.copyOf(ints, ints.length);
         copyArr[0] = ints[ints.length - 1];
         copyArr[copyArr.length - 1] = ints[0];
-        System.out.println("Array 2:" + Arrays.toString(copyArr));
+        return copyArr;
     }
 
-    public static void lessons4Part2() {
-        int[] ints = {1, 2, 3, 1, 2, 4};
+    public static int lessons4Part2(int[] ints) {
+
 
         boolean find = false;
         int findTemp = 0;
@@ -169,23 +170,7 @@ public class Main {
                 break;
             }
         }
-        if (find == false) {
-            System.out.println("Первое уникальное число в массиве:" + findTemp);
-
-        }
-    }
-
-    public static void lessons5Part2() {
-        int[] ints = new int[10];
-        for (int i = 0; i < ints.length; i++) {
-            ints[i] = ((int) (Math.random() * 31) - 15);
-
-
-        }
-        System.out.println("Массив до сортировки:" + Arrays.toString(ints));
-        bubbleSort(ints);
-        System.out.println("Массив полсе сортировки:" + Arrays.toString(ints));
-
+        return findTemp;
     }
 
     private static void bubbleSort(int[] ints) {
