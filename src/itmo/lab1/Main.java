@@ -15,6 +15,7 @@ public class Main {
 
 
     public static void number1() {
+
         System.out.println("Я");
         System.out.println("хорошо");
         System.out.println("знаю");
@@ -22,15 +23,16 @@ public class Main {
     }
 
     public static void number2() {
-        double result = 186.66666666666669D;
+        double result = (46 + 10) * ((double )10 / 3);
         System.out.println(result);
-        int result2 = -1740;
+        short result2 = (29) * (4) * (-15);
         System.out.println(result2);
     }
 
     public static void number3() {
         int number = 10500;
-        int result = number / 10 / 10;
+        double result =  ((number / 10) / 10);
+        System.out.println(number);
         System.out.println(result);
     }
 
