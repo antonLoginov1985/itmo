@@ -18,7 +18,7 @@ public class Main {
 
 
 
-        //lessons 3 решение 2 через latch
+        //lessons 3
         Counter counter = new Counter();
         CountDownLatch latch = new CountDownLatch(100);
         System.out.println(counter.getCount());
